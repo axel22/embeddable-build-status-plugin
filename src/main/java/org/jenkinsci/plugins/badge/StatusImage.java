@@ -63,6 +63,8 @@ class StatusImage implements HttpResponse {
         }
 
         rsp.setHeader("ETag",etag);
+        rsp.setHeader("Cache-Control", "no-cache, no-store, private, must-revalidate, max-age=0, max-stale=0, post-check=0, pre-check=0");
+        rsp.setHeader("Pragma", "no-cache");
         rsp.setHeader("Expires","Fri, 01 Jan 1984 00:00:00 GMT");
         rsp.setHeader("Content-Type", "image/png");
         rsp.setHeader("Content-Length", length);
